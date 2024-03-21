@@ -1,113 +1,516 @@
-import Image from "next/image";
-
+"use client";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Navbar />
+      {/* Body Content */}
+      <div
+        id="default-carousel"
+        className="relative w-full"
+        data-carousel="slide"
+      >
+        <div className="relative overflow-hidden h-slider">
+          <div className="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="../slider-1.jpg" alt="" title="" />
+          </div>
+          <div className="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="../slider-2.jpg" alt="" title="" />
+          </div>
+          <div className="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="../slider-3.jpg" alt="" title="" />
+          </div>
+        </div>
+        <button
+          type="button"
+          className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-10 cursor-pointer group focus:outline-none"
+          data-carousel-prev
+        >
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-sm bg-white dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg
+              className="w-4 h-4 text-black dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M5 1 1 5l4 4"
+              />
+            </svg>
+            <span className="sr-only">Previous</span>
+          </span>
+        </button>
+        <button
+          type="button"
+          className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-10 cursor-pointer group focus:outline-none"
+          data-carousel-next
+        >
+          <span className="inline-flex items-center justify-center w-10 h-10 rounded-sm bg-white dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg
+              className="w-4 h-4 text-black dark:text-gray-800 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span className="sr-only">Next</span>
+          </span>
+        </button>
+      </div>
+      <div className="px-4 lg:px-16 py-4 lg:py-8">
+        <div className="grid grid-flow-row-dense lg:grid-cols-3 lg:gap-4">
+          <div className="lg:col-span-2">
+            <h2 className="title font-bold">Tampilan Rumah</h2>
+            <div className="grid lg:grid-cols-3 lg:gap-4">
+              <div className="box-product mt-4">
+                <img src="../rumah-1.png" className="w-full" alt="" />
+                <h2 className="text-size-20 font-bold mt-5">Ruang Keluarga</h2>
+                <div className="text-size-14 mt-1">2.0 x 2.9</div>
+              </div>
+              <div className="box-product mt-4">
+                <img src="../rumah-2.png" className="w-full" alt="" />
+                <h2 className="text-size-20 font-bold mt-5">Kamar Tidur</h2>
+                <div className="text-size-14 mt-1">4.0 x 3.4</div>
+              </div>
+              <div className="box-product mt-4">
+                <img src="../rumah-3.png" className="w-full" alt="" />
+                <h2 className="text-size-20 font-bold mt-5">
+                  Ruang Makan & Dapur
+                </h2>
+                <div className="text-size-14 mt-1">3.0 x 2.9</div>
+              </div>
+              <div className="box-product mt-4">
+                <img src="../rumah-2.png" className="w-full" alt="" />
+                <h2 className="text-size-20 font-bold mt-5">Ruang Kerja</h2>
+                <div className="text-size-14 mt-1">2.0 x 2.9</div>
+              </div>
+              <div className="box-product mt-4">
+                <img src="../rumah-2.png" className="w-full" alt="" />
+                <h2 className="text-size-20 font-bold mt-5">Kamar tidur</h2>
+                <div className="text-size-14 mt-1">4.0 x 3.4</div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-5 lg:mt-0">
+            <div className="box">
+              <h2 className="font-semibold text-size-24">Omah Apik 3</h2>
+              <div className="mt-2 flex items-center">
+                <img
+                  src="../studio-icon.png"
+                  width="30"
+                  className="me-1"
+                  alt=""
+                />
+                <div className="text-size-14">Studio SAe</div>
+              </div>
+              <div className="mt-2 flex flex-row text-size-14">
+                <div className="basis-4/12">Jenis Rumah</div>
+                <div className="basis-8/12 font-medium">Scandinavian</div>
+              </div>
+              <div className="mt-2 flex flex-row text-size-14">
+                <div className="basis-4/12">Tipe Desain</div>
+                <div className="basis-8/12">
+                  <div className="text-orangePrimary flex items-center">
+                    <img
+                      src="../check-orange-icon.png"
+                      width="15"
+                      className="me-1.5"
+                      alt=""
+                    />
+                    Dapat Dimodifikasi
+                  </div>
+                </div>
+              </div>
+              <div className="py-5">
+                <hr />
+              </div>
+              <div className="grid grid-cols-4 gap-1">
+                <div className="text-graysemiThin">
+                  <center>
+                    <img src="../dimensi.png" width="25" alt="" />
+                    <div className="text-size-12 mt-1 text-graySemiThin">
+                      Dimensi Tanah
+                    </div>
+                    <div className="text-size-14 font-medium">15 x 8m</div>
+                  </center>
+                </div>
+                <div className="text-graysemiThin">
+                  <center>
+                    <img src="../luas.png" width="25" alt="" />
+                    <div className="text-size-12 mt-1 text-graySemiThin">
+                      Luas Bangunan
+                    </div>
+                    <div className="text-size-14 font-medium">
+                      112m<sup>2</sup>
+                    </div>
+                  </center>
+                </div>
+                <div className="text-graysemiThin">
+                  <center>
+                    <img src="../lantai.png" width="25" alt="" />
+                    <div className="text-size-12 mt-1 text-graySemiThin">
+                      Lantai
+                    </div>
+                    <div className="text-size-14 font-medium">2</div>
+                  </center>
+                </div>
+                <div className="text-graysemiThin">
+                  <center>
+                    <img src="../kamar-tidur.png" width="25" alt="" />
+                    <div className="text-size-12 mt-1 text-graySemiThin">
+                      Kamar Tidur
+                    </div>
+                    <div className="text-size-14 font-medium">4</div>
+                  </center>
+                </div>
+              </div>
+              <div className="py-5">
+                <hr />
+              </div>
+              <div>
+                <div className="text-size-14 font-medium">Harga Desain</div>
+                <div className="text-size-32 font-semibold">Rp. 32.500.000</div>
+                <div className="text-graySemiThin text-size-14">
+                  Harga konstruksi mulai dari Rp 560.000.000
+                </div>
+                <div className="mt-4">
+                  <a
+                    className="hidden lg:inline-block py-2 px-6 w-full text-center bg-orangePrimary text-white font-medium rounded-md transition"
+                    href="#"
+                  >
+                    Konsultasi Sekarang
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h2 className="title font-bold mt-10 lg:mt-36">
+          Desain Lainnya oleh Studio SAe
+        </h2>
+        <div className="grid grid-flow-row-dense lg:grid-cols-4 gap-4">
+          <div className="box-product mt-4 lg:mb-4">
+            <img src="../desain-rumah.png" className="w-full" alt="" />
+            <div className="flex items-center mt-6">
+              <h2 className="text-size-20 font-bold mb-0 me-3">Omah Apik 1</h2>
+              <div className="px-3 py-1 bg-grayTag rounded-full">
+                Scandinavian
+              </div>
+            </div>
+            <div className="mt-2 flex items-center">
+              <img
+                src="../studio-icon.png"
+                width="30"
+                className="me-1"
+                alt=""
+              />
+              <div className="text-size-14">Studio SAe</div>
+            </div>
+            <div className="grid grid-cols-4 mt-4">
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../dimensi.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Dimensi Tanah
+                  </div>
+                  <div className="text-size-14 font-medium">15 x 8m</div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../luas.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Luas Bangunan
+                  </div>
+                  <div className="text-size-14 font-medium">
+                    112m<sup>2</sup>
+                  </div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../lantai.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Lantai
+                  </div>
+                  <div className="text-size-14 font-medium">2</div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../kamar-tidur.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Kamar Tidur
+                  </div>
+                  <div className="text-size-14 font-medium">4</div>
+                </center>
+              </div>
+            </div>
+            <div className="py-5">
+              <hr />
+            </div>
+            <div>
+              <div className="text-size-14 font-medium">Harga Desain</div>
+              <div className="text-size-24 font-semibold">Rp. 32.500.000</div>
+              <div className="text-graySemiThin text-size-14">
+                Harga konstruksi mulai dari Rp 560.000.000
+              </div>
+              <div className="mt-4">
+                <a
+                  className="hidden lg:inline-block py-2 px-6 w-full text-center bg-white border border-orangePrimary text-orangePrimary font-medium rounded-md transition"
+                  href="#"
+                >
+                  Lihat Detail
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="box-product mt-0 lg:mt-4">
+            <img src="../desain-rumah.png" className="w-full" alt="" />
+            <div className="flex items-center mt-6">
+              <h2 className="text-size-20 font-bold mb-0 me-3">Omah Apik 2</h2>
+              <div className="px-3 py-1 bg-grayTag rounded-full">
+                Scandinavian
+              </div>
+            </div>
+            <div className="mt-2 flex items-center">
+              <img
+                src="../studio-icon.png"
+                width="30"
+                className="me-1"
+                alt=""
+              />
+              <div className="text-size-14">Studio SAe</div>
+            </div>
+            <div className="grid grid-cols-4 mt-4">
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../dimensi.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Dimensi Tanah
+                  </div>
+                  <div className="text-size-14 font-medium">15 x 8m</div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../luas.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Luas Bangunan
+                  </div>
+                  <div className="text-size-14 font-medium">
+                    112m<sup>2</sup>
+                  </div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../lantai.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Lantai
+                  </div>
+                  <div className="text-size-14 font-medium">2</div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../kamar-tidur.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Kamar Tidur
+                  </div>
+                  <div className="text-size-14 font-medium">4</div>
+                </center>
+              </div>
+            </div>
+            <div className="py-5">
+              <hr />
+            </div>
+            <div>
+              <div className="text-size-14 font-medium">Harga Desain</div>
+              <div className="text-size-24 font-semibold">Rp. 32.500.000</div>
+              <div className="text-graySemiThin text-size-14">
+                Harga konstruksi mulai dari Rp 560.000.000
+              </div>
+              <div className="mt-4">
+                <a
+                  className="hidden lg:inline-block py-2 px-6 w-full text-center bg-white border border-orangePrimary text-orangePrimary font-medium rounded-md transition"
+                  href="#"
+                >
+                  Lihat Detail
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="box-product mt-0 lg:mt-4">
+            <img src="../desain-rumah.png" className="w-full" alt="" />
+            <div className="flex items-center mt-6">
+              <h2 className="text-size-20 font-bold mb-0 me-3">Omah Apik 3</h2>
+              <div className="px-3 py-1 bg-grayTag rounded-full">
+                Scandinavian
+              </div>
+            </div>
+            <div className="mt-2 flex items-center">
+              <img
+                src="../studio-icon.png"
+                width="30"
+                className="me-1"
+                alt=""
+              />
+              <div className="text-size-14">Studio SAe</div>
+            </div>
+            <div className="grid grid-cols-4 mt-4">
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../dimensi.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Dimensi Tanah
+                  </div>
+                  <div className="text-size-14 font-medium">15 x 8m</div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../luas.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Luas Bangunan
+                  </div>
+                  <div className="text-size-14 font-medium">
+                    112m<sup>2</sup>
+                  </div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../lantai.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Lantai
+                  </div>
+                  <div className="text-size-14 font-medium">2</div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../kamar-tidur.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Kamar Tidur
+                  </div>
+                  <div className="text-size-14 font-medium">4</div>
+                </center>
+              </div>
+            </div>
+            <div className="py-5">
+              <hr />
+            </div>
+            <div>
+              <div className="text-size-14 font-medium">Harga Desain</div>
+              <div className="text-size-24 font-semibold">Rp. 32.500.000</div>
+              <div className="text-graySemiThin text-size-14">
+                Harga konstruksi mulai dari Rp 560.000.000
+              </div>
+              <div className="mt-4">
+                <a
+                  className="hidden lg:inline-block py-2 px-6 w-full text-center bg-white border border-orangePrimary text-orangePrimary font-medium rounded-md transition"
+                  href="#"
+                >
+                  Lihat Detail
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="box-product mt-0 lg:mt-4">
+            <img src="../desain-rumah.png" className="w-full" alt="" />
+            <div className="flex items-center mt-6">
+              <h2 className="text-size-20 font-bold mb-0 me-3">Omah Apik 4</h2>
+              <div className="px-3 py-1 bg-grayTag rounded-full">
+                Scandinavian
+              </div>
+            </div>
+            <div className="mt-2 flex items-center">
+              <img
+                src="../studio-icon.png"
+                width="30"
+                className="me-1"
+                alt=""
+              />
+              <div className="text-size-14">Studio SAe</div>
+            </div>
+            <div className="grid grid-cols-4 mt-4">
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../dimensi.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Dimensi Tanah
+                  </div>
+                  <div className="text-size-14 font-medium">15 x 8m</div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../luas.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Luas Bangunan
+                  </div>
+                  <div className="text-size-14 font-medium">
+                    112m<sup>2</sup>
+                  </div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../lantai.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Lantai
+                  </div>
+                  <div className="text-size-14 font-medium">2</div>
+                </center>
+              </div>
+              <div className="text-graysemiThin">
+                <center>
+                  <img src="../kamar-tidur.png" width="25" alt="" />
+                  <div className="text-size-12 mt-1 text-graySemiThin">
+                    Kamar Tidur
+                  </div>
+                  <div className="text-size-14 font-medium">4</div>
+                </center>
+              </div>
+            </div>
+            <div className="py-5">
+              <hr />
+            </div>
+            <div>
+              <div className="text-size-14 font-medium">Harga Desain</div>
+              <div className="text-size-24 font-semibold">Rp. 32.500.000</div>
+              <div className="text-graySemiThin text-size-14">
+                Harga konstruksi mulai dari Rp 560.000.000
+              </div>
+              <div className="mt-4">
+                <a
+                  className="hidden lg:inline-block py-2 px-6 w-full text-center bg-white border border-orangePrimary text-orangePrimary font-medium rounded-md transition"
+                  href="#"
+                >
+                  Lihat Detail
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      {/* End Body Content */}
+      <Footer />
+    </>
   );
 }

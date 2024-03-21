@@ -2,32 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-size: 16px;
+  background: #fff;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.h-slider {
+  height: 480px;
+}
+.title {
+  font-size: 24px;
+}
+.box {
+  background: #fff;
+  padding: 24px;
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+}
+.box-product {
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+}
+.text-size-12 {
+  font-size: 12px;
+}
+.text-size-14 {
+  font-size: 14px;
+}
+.text-size-20 {
+  font-size: 20px;
+}
+.text-size-24 {
+  font-size: 24px;
+}
+.text-size-32 {
+  font-size: 32px;
+}
+sup {
+  font-size: 60%;
+  top: -0.5em;
+}
+.bg-footer {
+  background: #012846;
+}
+.bg-ig {
+  background: #2c373e;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .h-slider {
+    height: 10rem;
   }
 }
